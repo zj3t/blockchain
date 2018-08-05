@@ -19,12 +19,9 @@ contract KittyInterface {
 
 contract ZombieFeeding is ZombieFactory {
 
-  // 1. 이 줄을 지우게:
   address ckAddress = 0x06012c8cf97BEaD5deAe237070F9587f8E7A266d;
-  // 2. 여기서 대입을 빼고 그냥 선언으로 바꾸게:
   KittyInterface kittyContract = KittyInterface(ckAddress);
 
-  // 3. 여기 setKittyContractAddress 메소드를 추가하게
 
   function feedAndMultiply(uint _zombieId, uint _targetDna, string _species) public {
     require(msg.sender == zombieToOwner[_zombieId]);
